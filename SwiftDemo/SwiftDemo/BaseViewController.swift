@@ -33,7 +33,7 @@ class BaseViewController: UIViewController {
     }
     
     //MARK:- ScrollView
-    func initMyScrollView() -> Void {
+    private func initMyScrollView() {
         
         var stateH: CGFloat = 0
         if #available(iOS 13.0, *) {
@@ -58,12 +58,12 @@ class BaseViewController: UIViewController {
         
     }
     
-    func increaseScrollViewContentH() -> Void {
+    func increaseScrollViewContentH() {
         contentHeight += (verSpace + rButtonH)
         self.myScrollView?.contentSize = CGSize.init(width: scrollW, height: contentHeight)
     }
     
-    func increaseCustomScrollViewContentH(customH: CGFloat) -> Void {
+    func increaseCustomScrollViewContentH(customH: CGFloat) {
         contentHeight += (verSpace + customH)
         self.myScrollView?.contentSize = CGSize.init(width: scrollW, height: contentHeight)
     }

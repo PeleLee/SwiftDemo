@@ -12,15 +12,22 @@ class ViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        let button1: UIButton = self.myButton(title: "关于Swift", action: #selector(_aboutSwift))
+        let button1: UIButton = self.myButton(title: "关于Swift", action: #selector(aboutSwift))
         myScrollView!.addSubview(button1)
+        self.increaseScrollViewContentH()
+        
+        let button2 = self.myButton(title: "Swift初见", action: #selector(swiftTour))
+        myScrollView!.addSubview(button2)
         self.increaseScrollViewContentH()
     }
     
-    @objc func _aboutSwift() -> Void  {
-        self.navigationController?.pushViewController(AboutSwiftVC.init(), animated: true)
+    @objc private func aboutSwift()  {
+        self.navigationController?.pushViewController(ContentVC1.init(type: .AboutSwift), animated: true)
     }
     
+    @objc private func swiftTour() {
+        self.navigationController?.pushViewController(ContentVC1.init(type: .SwiftTour), animated: true)
+    }
     
 }
 
