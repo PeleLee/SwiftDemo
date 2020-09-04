@@ -19,6 +19,14 @@ class ViewController: BaseViewController {
         let button2 = self.myButton(title: "Swift初见", action: #selector(swiftTour))
         myScrollView!.addSubview(button2)
         self.increaseScrollViewContentH()
+        
+        let button3 = self.myButton(title: "基础部分", action: #selector(theBasics))
+        myScrollView!.addSubview(button3)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func theBasics() {
+        self.navigationController?.pushViewController(ContentVC1.init(type: .TheBasics), animated: true)
     }
     
     @objc private func aboutSwift()  {

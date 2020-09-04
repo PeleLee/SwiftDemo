@@ -23,7 +23,7 @@ class BaseViewController: UIViewController {
     let buttonX: CGFloat = 20
     var buttonW: CGFloat = 0
     
-    
+    let statementStr1 = "仅为我个人认为需要做的笔记。"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,10 +92,22 @@ class BaseViewController: UIViewController {
         label.text = title
         label.textColor = .darkGray
         label.numberOfLines = 0
-        label.sizeToFit()
         label.backgroundColor = .init(red: 249/255.0, green: 213/255.0, blue: 86/255.0, alpha: 0.2)
         label.font = .systemFont(ofSize: 14)
         return label
         
+    }
+    
+    func changeLabelHeight(label: UILabel, text: String) {
+        let ocText: NSString = text as NSString
+        let size = CGSize(width: label.frame.width, height: CGFloat(Int.max))
+        let dic = NSDictionary(object: label.font as Any, forKey: kCTFontAttributeName as! NSCopying)
+        let stringSize = ocText.boundingRect(with: size,
+                                             options: .usesLineFragmentOrigin,
+                                             attributes: dic as? [NSAttributedString.Key:Any],
+                                             context: nil)
+        var labelFrame = label.frame
+        labelFrame.size.height = stringSize.height
+        label.frame = labelFrame
     }
 }
