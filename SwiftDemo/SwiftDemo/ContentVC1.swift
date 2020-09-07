@@ -8,12 +8,6 @@
 
 import UIKit
 
-enum ChapterType {
-    case AboutSwift
-    case SwiftTour
-    case TheBasics
-}
-
 class ContentVC1: BaseViewController  {
     
     var type: ChapterType = .AboutSwift
@@ -39,7 +33,36 @@ class ContentVC1: BaseViewController  {
             self.swiftTourNote()
         case .TheBasics:
             self.theBasicsNote()
+        case .BasicOperator:
+            self.basicOperator()
         }
+    }
+    
+    private func basicOperator() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "<< 代码在BasicOperator.playground中。"+myLB,
+                     "Swift与C语言和OC不同的是，赋值操作不返回任何值。"+myLB,
+                     "a%b 与 a%-bd 的结果是相通的。"+myLB,
+                     "一元正号(+)可以配合一元负号(-)使用，代码会具有对称美。"+myLB,
+                     "Swift的恒等(===)与不恒等(!==)比较符。"+myLB,
+                     "元组元素相同且长度(七个以内)相同时，可以被比较，超长需要自己实现比较符。存在布尔类型的元组不能被比较。"+myLB,
+                     "空合运算符(??)"+myLB,
+                     "闭区间运算符(a...b)，半开区间运算符(a..<b)."+myLB,
+                     "半开区间(..b或..<b)，可以用作数组下标。",
+                     "可以使用半开区间初始化Range对象，并检查是否包含某个特定值。"+myLB,
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func theBasicsNote() {

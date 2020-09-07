@@ -8,6 +8,13 @@
 
 import UIKit
 
+enum ChapterType {
+    case AboutSwift // 关于Swift
+    case SwiftTour // Swift初见
+    case TheBasics // 基础部分
+    case BasicOperator // 基本运算符
+}
+
 class BaseViewController: UIViewController {
 
     var myScrollView: UIScrollView?
