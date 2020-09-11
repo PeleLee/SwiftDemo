@@ -13,6 +13,8 @@ enum ChapterType {
     case SwiftTour // Swift初见
     case TheBasics // 基础部分
     case BasicOperator // 基本运算符
+    case StringsAndCharacters // 字符串和字符
+    
 }
 
 class BaseViewController: UIViewController {

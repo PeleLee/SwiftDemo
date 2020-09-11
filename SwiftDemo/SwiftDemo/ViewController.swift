@@ -27,6 +27,14 @@ class ViewController: BaseViewController {
         let button4 = self.myButton(title: "基本运算符", action: #selector(basicOperator))
         myScrollView!.addSubview(button4)
         self.increaseScrollViewContentH()
+        
+        let button5 = self.myButton(title: "字符串和字符", action: #selector(stringsAndCharacters))
+        myScrollView!.addSubview(button5)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func stringsAndCharacters() {
+        self.navigationController?.pushViewController(ContentVC1.init(type: .StringsAndCharacters), animated: true)
     }
     
     @objc private func basicOperator() {

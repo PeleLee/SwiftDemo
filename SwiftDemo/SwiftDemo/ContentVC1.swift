@@ -35,7 +35,59 @@ class ContentVC1: BaseViewController  {
             self.theBasicsNote()
         case .BasicOperator:
             self.basicOperator()
+        case .StringsAndCharacters:
+            self.stringsAndCharcters()
         }
+    }
+    
+    private func stringsAndCharcters() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "<< 代码在StringsAndCharacters.playground中。"+myLB,
+                     "Swift的String类与OC的NSString类可以无缝桥接。"+myLB,
+                     "多行字符串字面量："+mySingleLB,
+                     "使用\"\"\"来声明多行字符串字面量。"+mySingleLB,
+                     "这两个位置：\"开启引号\"之后和\"结束引号\"之前，都没有换行符号，其他位置的换行符是真实的。"+mySingleLB,
+                     "续行符：不想出现换行符的话，可以在行尾加一个\\作为续行符。"+mySingleLB,
+                     "多行字符串字面量缩进：\"结束引号\"前的空白字符串需要被忽略，超过部分就是缩进。"+myLB,
+                     "特殊字符："+mySingleLB,
+                     "可以使用\\u{位码}来表示Unicode标量。"+mySingleLB,
+                     "多行中n(从单引号到超过三引号)个引号的使用。"+myLB,
+                     "去除字符串转移功能：使用前后#(可以有多个，但要保证前后对称)包裹原有字符串。"+mySingleLB,
+                     "使其中的部分转移符生效，可以通过在在\\后添加相同数量的#来实现。"+myLB,
+                     "字符串是值类型，深拷贝。"+myLB,
+                     "可以通过字符或者字符数组初始化字符串。"+myLB,
+                     "Swift的Character，代表一个可扩展的字形群。同一个字符，可能包含不止一个标量。"+mySingleLB,
+                     "可以用包围记号(\\u{20DD})包围其他Unicode标量，形成一个单一的Character值。"+myLB,
+                     "count方法计算字符串中的字符数量，测试汉字和旗帜都只占一个字符长度。与OC的length结果不一致。"+mySingleLB,
+                     "在字符串后添加一个标量，如果更改了最后一个字符值，就不会增加字符串字符数量。"+myLB,
+                     "字符串索引 index，不能用整数做索引。"+mySingleLB,
+                     "索引的各种便利方法。也可以在任意一个确认的并遵守Collection协议的类型中使用，如Array、Dictionary等。"+mySingleLB,
+                     "使用indices属性可以创建一个包含全部索引的Range."+myLB,
+                     "使用insert插入单个字符和一个字符串的区别。"+mySingleLB,
+                     "使用remove删除单个字符和字符串的区别。"+mySingleLB,
+                     "这些方法也可以在任意一个确认的并遵守RangeReplaceableCollection协议的类型中使用。"+mySingleLB,
+                     "注意要求遵守的协议和index方法要求的协议不一样。"+myLB,
+                     "SubString与String的区别在于性能优化上，SubString可以重用原String的内存空间。"+mySingleLB,
+                     "可以配合官方的图解来理解。"+mySingleLB,
+                     "StringProtocol协议，操作字符串的函数可以使用协议表示参数会更加方便，兼容String与SubString."+myLB,
+                     "两个字符串相等的标准：可扩展的字形群集有相同的语言意义和外观，即标准相等。"+mySingleLB,
+                     "有些字符外观相同但语义不同，两者不相等。比如英文A和俄文A。"+myLB,
+                     "字符串的Unicode形式。"+mySingleLB,
+                     "UTF-8、UTF-16和UTF-32的区别，32需要使用scalar.value.",
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func basicOperator() {
@@ -138,6 +190,10 @@ class ContentVC1: BaseViewController  {
     
     func myLineBreak() -> String {
         return "\n\n"
+    }
+    
+    func mySingleLineBreak() -> String {
+        return "\n"
     }
     
 }
