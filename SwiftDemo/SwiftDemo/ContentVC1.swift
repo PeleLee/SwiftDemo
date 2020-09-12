@@ -37,7 +37,45 @@ class ContentVC1: BaseViewController  {
             self.basicOperator()
         case .StringsAndCharacters:
             self.stringsAndCharcters()
+        case .CollectionTypes:
+            self.collectionTypes()
         }
+    }
+    
+    private func collectionTypes() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "<< 代码在CollectionTypes.playground中。"+myLB,
+                     "集合类型：数组 Array、集合 Set、字典 Dictionary，均为泛型集合，只有数组是有序的。"+myLB,
+                     "Array被桥接到NSArray类。"+myLB,
+                     "Array(repeating:count)方法创建带重复元素的数组。"+mySingleLB,
+                     "isEmpty检查数组是否为空。"+mySingleLB,
+                     "使用下标Range批量修改数组元素。"+mySingleLB,
+                     "使用removeFirst()和removeLast()快速删除顶端元素。"+mySingleLB,
+                     "使用enumerated()方法来遍历数组。"+myLB,
+                     "集合(Sets)，集合顺序不重要或者希望每个元素只出现一次时使用。"+mySingleLB,
+                     "Set类型被桥接到NSSet类。"+mySingleLB,
+                     "可哈希化的类型才能被存储在集合中，遵守Hashable、Equatable协议。"+myLB,
+                     "集合的sorted()方法返回一个数组，是有序的，可以通过闭包来控制顺序和倒序。"+myLB,
+                     "两个集合之间的几种操作"+myLB,
+                     "两个集合的成员关系判断，相等关系，包含关系，交集，严格包含等。"+myLB,
+                     "Swift的Dictionary类型被桥接到Foundatin的NSDictionary类。"+mySingleLB,
+                     "字典的Key类型必须遵守Hashable协议。"+myLB,
+                     "字典的updateValue(_:forKey:)方法可以返回旧值。"+myLB,
+                     "字典的keys和values都不是集合，也不是数组，需要强转一下。",
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func stringsAndCharcters() {

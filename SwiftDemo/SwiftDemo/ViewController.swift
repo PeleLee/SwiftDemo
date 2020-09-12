@@ -31,6 +31,14 @@ class ViewController: BaseViewController {
         let button5 = self.myButton(title: "字符串和字符", action: #selector(stringsAndCharacters))
         myScrollView!.addSubview(button5)
         self.increaseScrollViewContentH()
+        
+        let button6 = self.myButton(title: "集合类型", action: #selector(collectionTypes))
+        myScrollView!.addSubview(button6)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func collectionTypes() {
+        self.navigationController?.pushViewController(ContentVC1(type: .CollectionTypes), animated: true)
     }
     
     @objc private func stringsAndCharacters() {
