@@ -15,6 +15,7 @@ enum ChapterType {
     case BasicOperator // 基本运算符
     case StringsAndCharacters // 字符串和字符
     case CollectionTypes // 集合类型
+    case ControlFlow // 控制流
 }
 
 class BaseViewController: UIViewController {

@@ -35,6 +35,14 @@ class ViewController: BaseViewController {
         let button6 = self.myButton(title: "集合类型", action: #selector(collectionTypes))
         myScrollView!.addSubview(button6)
         self.increaseScrollViewContentH()
+        
+        let button7 = self.myButton(title: "控制流", action: #selector(controlFlow))
+        myScrollView!.addSubview(button7)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func controlFlow() {
+        self.navigationController?.pushViewController(ContentVC1(type: .ControlFlow), animated: true)
     }
     
     @objc private func collectionTypes() {

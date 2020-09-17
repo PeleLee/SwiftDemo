@@ -39,7 +39,49 @@ class ContentVC1: BaseViewController  {
             self.stringsAndCharcters()
         case .CollectionTypes:
             self.collectionTypes()
+        case .ControlFlow:
+            self.controlFlow()
         }
+    }
+    
+    private func controlFlow() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "<< 代码在ControlFlow.playground中。"+myLB,
+                     "Swift控制流：while、if、guard、switch、for-in。"+mySingleLB,
+                     "switch特别强大，可以匹配很多模式，包括范围匹配，元组和特定类型匹配，或配合where描述更复杂的匹配"+myLB,
+                     "可在for-in中使用stride方法实现跳过。"+myLB,
+                     "while用在迭代次数位置的情况下，比如蛇和梯子的游戏。"+mySingleLB,
+                     "repeat-while循环在代码块结束时判断条件，whil在循环开始时判断条件。"+myLB,
+                     "if语句的else语句是可选的，在不需要完整判断情况的时候可省略。可以是不完备的。"+myLB,
+                     "switch语句必须上完备的，需要涵盖所有值的情况。"+myLB,
+                     "switch不存在隐式贯穿，不需要写break。"+mySingleLB,
+                     "可以显示贯穿case分支，使用fallthrough语句。"+mySingleLB,
+                     "每个case分支必须包含至少一条语句。两种条件匹配同一个情况时，需要用逗号并列条件，与C和OC不同。"+myLB,
+                     "switch case分支的高级匹配模式:"+mySingleLB,
+                     "--匹配区间。如case 5..<12:"+mySingleLB,
+                     "--元组匹配。使用_来匹配所有可能的值，如(_, 0)。可以搭配区间使用，如(-2...2, -2...2)。"+mySingleLB,
+                     "--值绑定。如(let x, 0)、let (x, y)等。"+mySingleLB,
+                     "--Where来判断额外的条件，搭配值绑定使用。如 let (x, y) where x == y:"+mySingleLB,
+                     "--复合型Cases。使用,分隔多种case，case过多时可以换行。也可以搭配值绑定使用。"+myLB,
+                     "switch分支中使用break，被匹配到时会立即结束switch语句。"+myLB,
+                     "switch中使用fallthrough关键字可以达到C语言switch语句的效果"+myLB,
+                     "带标签的语句，可以在复杂的控制流结构中（包含多个控制流），显示指明语句影响的是哪一个控制流。"+myLB,
+                     "guard语句，可以提升代码可读性，使代码连贯的被执行而不需要将它包在else块中。"+myLB,
+                     "#available(平台名称 版本号, ... , *)语句，是swift内置的，可以检查API可用性。",
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func collectionTypes() {
