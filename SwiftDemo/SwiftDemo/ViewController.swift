@@ -39,6 +39,14 @@ class ViewController: BaseViewController {
         let button7 = self.myButton(title: "控制流", action: #selector(controlFlow))
         myScrollView!.addSubview(button7)
         self.increaseScrollViewContentH()
+        
+        let button8 = self.myButton(title: "函数", action: #selector(functions))
+        myScrollView!.addSubview(button8)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func functions() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Functions), animated: true)
     }
     
     @objc private func controlFlow() {

@@ -41,7 +41,54 @@ class ContentVC1: BaseViewController  {
             self.collectionTypes()
         case .ControlFlow:
             self.controlFlow()
+        case .Functions:
+            self.functions()
         }
+    }
+    
+    private func functions() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "<< 代码在Functions.playground中。"+myLB,
+                     "函数参数可以提供默认值，以简化函数调用。"+myLB,
+                     "函数都有类型，可以当普通变量类型一样处理。"+myLB,
+                     "严格地说，即使函数没有返回值，它仍然返回一个Void类型特殊值，该值为一个空元组，写成()"+myLB,
+                     "函数返回值为元组时，可以为元组每个元素命名，方便后续使用。"+mySingleLB,
+                     "整个元组可能没有值时，可以使用可选的元组类型作为函数返回值。"+myLB,
+                     "函数的隐式返回，函数体（大括号内）是单行表达式时，可以省略reture."+myLB,
+                     "函数的参数标签和参数名称，如 func greeting(for person: String)."+mySingleLB,
+                     "for是参数标签，person是参数名称。"+mySingleLB,
+                     "参数标签在调用函数时使用，参数名称在函数的实现中使用。"+mySingleLB,
+                     "默认以参数名称作为参数标签。"+myLB,
+                     "参数标签可以让函数更有表达力，更类似自然语言，仍能保持函数内部的可读性以及清晰的意图。"+mySingleLB,
+                     "如func greet(person: String, from hometown: String) -> String函数。"+myLB,
+                     "使用_来忽略参数标签。忽略后参数名称也不能当作参数标签来使用。"+myLB,
+                     "可以给函数参数设置默认值，将带有默认值的参数放在最后面是官方建议的做法，但也可以放前面。"+myLB,
+                     "可变参数，在类型后面加上(...)的方式来实现，如func arithmeticMean(_ numbers: Double...),"+mySingleLB,
+                     "每个函数最多只能有一个可变参数。"+myLB,
+                     "输入输出参数(inout修饰)，是函数对函数体外产生影响的一种方式。"+mySingleLB,
+                     "几个条件:"+mySingleLB,
+                     "* 传入的inout参数值必须是变量。"+mySingleLB,
+                     "* inout参数不能有默认值。"+mySingleLB,
+                     "* 可变参数不能用inout修饰。"+myLB,
+                     "函数类型:由函数参数类型和返回值类型决定，与函数名称和函数体内逻辑没关系。"+myLB,
+                     "可以像使用其他类型一样使用函数类型，当作常量和变量。"+myLB,
+                     "可以把函数类型当作函数参数类型，这样就以一种类型安全的方式将一部分功能转给调用者实现。"+myLB,
+                     "函数类型可以作为函数返回值。"+myLB,
+                     "嵌套函数是定义在函数内部的局部函数，与其他的全局函数要区分清楚。",
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func controlFlow() {
