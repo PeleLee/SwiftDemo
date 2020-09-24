@@ -43,7 +43,59 @@ class ContentVC1: BaseViewController  {
             self.controlFlow()
         case .Functions:
             self.functions()
+        case .Closures:
+            self.closures()
         }
+    }
+    
+    private func closures() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "<< 代码Closures.playground中。"+myLB,
+                     "闭包与函数的关系："+mySingleLB,
+                     "* 全局函数是有名字但不会捕获任何值的闭包。"+mySingleLB,
+                     "* 嵌套函数是有名字并可以捕获函数域内值的闭包。"+mySingleLB,
+                     "* 闭包表达式是可以捕获上下文值的匿名闭包。"+myLB,
+                     "闭包表达式注意点："+mySingleLB,
+                     "* 参数可以是in-out参数。"+mySingleLB,
+                     "* 参数不能设置默认值。"+mySingleLB,
+                     "* 参数可以是可变参数。"+mySingleLB,
+                     "* 参数和返回值都可以为元组。"+myLB,
+                     "闭包表达式是为了简化函数参数的声明，语法格式要记清楚。"+myLB,
+                     "闭包函数体(in后面的内容)只有一行时，可以把整个闭包收缩为一行。"+myLB,
+                     "内联闭包总能根据上下文推断出参数和返回值类型，可以省略类型声明。"+mySingleLB,
+                     "但是也可以，仍然可以写出有完整格式的闭包，可以提高代码可读性。"+myLB,
+                     "闭包函数体为一行时，支持隐式返回，可以省略reture关键字。"+myLB,
+                     "闭包参数名称缩写，省略参数列表声明和in关键字。"+myLB,
+                     "运算符方法，当闭包接受两个同类型参数并返回Bool类型值时，可用'>'或'<'达到最简形式。"+myLB,
+                     "尾随闭包：当闭包非常长以至于不能在一行中进行书写时使用。"+mySingleLB,
+                     "可以优雅地在函数后封装闭包的具体功能，而不需要将整个闭包包含在方法调用的括号中。"+mySingleLB,
+                     "函数支持将其作为最后一个参数调用。"+mySingleLB,
+                     "函数只有一个尾随闭包参数时，可以吧函数调用的括号去掉。"+myLB,
+                     "闭包的值捕获，可以在被定义的上下文中捕获常量或变量，即使原作用域已经不存在。"+mySingleLB,
+                     "可以捕获值的闭包的最简单形式是嵌套函数。"+myLB,
+                     "闭包是引用类型，将闭包赋值给两个不同的常量或变量，两个值都会指向同一个闭包。"+myLB,
+                     "逃逸闭包：函数返回后才被执行，称该闭包从函数中逃逸。"+mySingleLB,
+                     "使用@escaping关键字声明。"+mySingleLB,
+                     "与非逃逸闭包相比，必须显式引用self."+myLB,
+                     "自动闭包："+mySingleLB,
+                     "* 用于包装传递给函数作为参数的表达式。"+mySingleLB,
+                     "* 不接受任何参数。"+mySingleLB,
+                     "* 实现延时求值，调用闭包时代码才会执行，方便控制代码执行时机。"+mySingleLB,
+                     "* @autoclosure 属性，会将参数自动转化为一个闭包，不需要显示声明。"+mySingleLB,
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func functions() {

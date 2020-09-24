@@ -43,6 +43,14 @@ class ViewController: BaseViewController {
         let button8 = self.myButton(title: "函数", action: #selector(functions))
         myScrollView!.addSubview(button8)
         self.increaseScrollViewContentH()
+        
+        let button9 = self.myButton(title: "闭包", action: #selector(closures))
+        myScrollView!.addSubview(button9)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func closures() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Closures), animated: true)
     }
     
     @objc private func functions() {
