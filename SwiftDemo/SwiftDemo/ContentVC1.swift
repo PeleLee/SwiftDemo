@@ -45,7 +45,44 @@ class ContentVC1: BaseViewController  {
             self.functions()
         case .Closures:
             self.closures()
+        case .Enumerations:
+            self.enumerations()
         }
+    }
+    
+    private func enumerations() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "<< 代码Enumerations.playground中。"+myLB,
+                     "枚举默认没有整型的原始值，有的话可以是字符串、字符或是整型值或浮点数。"+mySingleLB,
+                     "枚举成员可以指定任意类型的关联值，像其他语言的联合体和变体。"+myLB,
+                     "枚举是一等类型，采用了很多只有被类所支持的特性。如计算属性、实例方法、构造函数、遵守协议等"+mySingleLB,
+                     "枚举成员本身就是完备的值，不一定是其他语言默认的整型值。"+myLB,
+                     "枚举遵守CaseIterable协议，可以生成包含所有枚举成员的集合。"+myLB,
+                     "switch搭配枚举使用。"+mySingleLB,
+                     "值绑定的简便方法：多个常量或变量时，可以只写一个let或var."+myLB,
+                     "枚举的原始值："+mySingleLB,
+                     "原始值可以是字符串、字符，或者任意整型值或浮点型值。"+mySingleLB,
+                     "定义原始值类型的语法，如enum ASCIIControlCharacter: Character {}"+mySingleLB,
+                     "与关联值的不同：原始值始终不变，关联值可以变化。"+myLB,
+                     "枚举的隐式赋值。"+mySingleLB,
+                     "--条件：当原始值类型为整数或者字符串类型时。"+mySingleLB,
+                     "整数类型隐式原始值默认从0开始，字符串类型的隐式原始值为该枚举成员的名称。"+mySingleLB,
+                     "rawValue:使用原始值初始化枚举实例，是一个可失败的构造器，实例也是可选类型。"+myLB,
+                     "indirect声明嵌套枚举。",
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func closures() {

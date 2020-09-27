@@ -47,6 +47,14 @@ class ViewController: BaseViewController {
         let button9 = self.myButton(title: "闭包", action: #selector(closures))
         myScrollView!.addSubview(button9)
         self.increaseScrollViewContentH()
+        
+        let button10 = self.myButton(title: "枚举", action: #selector(enumerations))
+        myScrollView!.addSubview(button10)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func enumerations() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Enumerations), animated: true)
     }
     
     @objc private func closures() {
