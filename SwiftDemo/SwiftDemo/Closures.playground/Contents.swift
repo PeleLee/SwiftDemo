@@ -143,7 +143,7 @@ print(customerProvider)
 print("Now serving \(customerProvider())!")
 print(customersInLine.count)
 
-myPrint("显示声明自动闭包作为函数参数")
+myPrint("显式声明自动闭包作为函数参数")
 func serve(customer customerProvider: ()->String) {
     print("Now serving \(customerProvider())!")
 }

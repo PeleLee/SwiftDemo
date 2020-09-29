@@ -47,7 +47,47 @@ class ContentVC1: BaseViewController  {
             self.closures()
         case .Enumerations:
             self.enumerations()
+        case .StructuresAndClasses:
+            self.structuresAndClasses()
         }
+    }
+    
+    private func structuresAndClasses() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1 + myLB,
+                     "代码在StringsAndCharacters.playground中。"+myLB,
+                     "Swift中结构体和类的功能更加相近，大部分功能都可以用在结构体或者类上。"+mySingleLB,
+                     "结构体和类都可以用实例这个术语。"+myLB,
+                     "类的功能更多，但是以增加复杂度为代价的，优先使用结构体，因为他们更容易理解。"+mySingleLB,
+                     "类附加的功能："+mySingleLB,
+                     "* 允许继承。"+mySingleLB,
+                     "* 检查和解释一个类实例的类型。"+mySingleLB,
+                     "* 析构器允许类实例释放所有被分配的资源。"+mySingleLB,
+                     "* 引用计数允许对类多次引用。"+mySingleLB,
+                     "结构体都有一个自动生成的成员逐一构造器方法，可以为各个属性设置初始值。"+myLB,
+                     "结构体和枚举都是值类型。"+mySingleLB,
+                     "integer、boolean、string、array等都是值类型，底层也是使用结构体实现的。"+myLB,
+                     "系统都对标准库中集合的复制进行了优化："+mySingleLB,
+                     "新集合不会被立即复制，而是跟原集合共享一份内存，在集合的某个副本要被修改前，才会真正复制。"+mySingleLB,
+                     "包括数组、字典和字符串。"+myLB,
+                     "类是引用类型。"+mySingleLB,
+                     "可以使用恒等运算符：相同（===）、不相同（！==）来判定两个常量或变量是否引用同一个类实例。"+myLB,
+                     "相同（===）与等于（==）的区别："+mySingleLB,
+                     "* === 表示两个类类型的常量与变量引用同一个类实例。"+mySingleLB,
+                     "* == 表示两个实例的值相等或等价。",
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func enumerations() {
@@ -104,14 +144,14 @@ class ContentVC1: BaseViewController  {
                      "闭包表达式是为了简化函数参数的声明，语法格式要记清楚。"+myLB,
                      "闭包函数体(in后面的内容)只有一行时，可以把整个闭包收缩为一行。"+myLB,
                      "内联闭包总能根据上下文推断出参数和返回值类型，可以省略类型声明。"+mySingleLB,
-                     "但是也可以，仍然可以写出有完整格式的闭包，可以提高代码可读性。"+myLB,
+                     "但是也可以声明类型，仍然可以写出有完整格式的闭包，可以提高代码可读性。"+myLB,
                      "闭包函数体为一行时，支持隐式返回，可以省略reture关键字。"+myLB,
                      "闭包参数名称缩写，省略参数列表声明和in关键字。"+myLB,
                      "运算符方法，当闭包接受两个同类型参数并返回Bool类型值时，可用'>'或'<'达到最简形式。"+myLB,
                      "尾随闭包：当闭包非常长以至于不能在一行中进行书写时使用。"+mySingleLB,
                      "可以优雅地在函数后封装闭包的具体功能，而不需要将整个闭包包含在方法调用的括号中。"+mySingleLB,
                      "函数支持将其作为最后一个参数调用。"+mySingleLB,
-                     "函数只有一个尾随闭包参数时，可以吧函数调用的括号去掉。"+myLB,
+                     "函数只有一个尾随闭包参数时，可以把函数调用的括号去掉。"+myLB,
                      "闭包的值捕获，可以在被定义的上下文中捕获常量或变量，即使原作用域已经不存在。"+mySingleLB,
                      "可以捕获值的闭包的最简单形式是嵌套函数。"+myLB,
                      "闭包是引用类型，将闭包赋值给两个不同的常量或变量，两个值都会指向同一个闭包。"+myLB,
