@@ -20,6 +20,7 @@
 /* Begin PBXFileReference section */
 		9B197BA024EDFFA8002A90BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		9B3A1A7824ECA8D000BAD1AF /* ContentVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVC1.swift; sourceTree = "<group>"; };
+		9B5401F92532AA7900E7DBED /* Properties.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Properties.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9B79A4B724EB56EE000856A0 /* SwiftDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B79A4BA24EB56EE000856A0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9B79A4BC24EB56EE000856A0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,7 +37,7 @@
 		9BD9688525216EFD00A406BD /* ContentVC1.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ContentVC1.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9688725216F0700A406BD /* ControlFlow.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ControlFlow.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9688925216F1000A406BD /* Enumerations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enumerations.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
-		9BD9688B25216F1800A406BD /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Functions.playground; sourceTree = "<group>"; };
+		9BD9688B25216F1800A406BD /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Functions.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9688D25216F2500A406BD /* TheBasicsPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TheBasicsPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
@@ -75,6 +76,7 @@
 				9B197BA024EDFFA8002A90BE /* BaseViewController.swift */,
 				9B79A4BE24EB56EE000856A0 /* ViewController.swift */,
 				9B3A1A7824ECA8D000BAD1AF /* ContentVC1.swift */,
+				9B5401F92532AA7900E7DBED /* Properties.playground */,
 				9BD9688D25216F2500A406BD /* TheBasicsPlayground.playground */,
 				9BD9688B25216F1800A406BD /* Functions.playground */,
 				9BD9688925216F1000A406BD /* Enumerations.playground */,

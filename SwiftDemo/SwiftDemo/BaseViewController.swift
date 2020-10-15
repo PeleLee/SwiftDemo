@@ -20,6 +20,7 @@ enum ChapterType {
     case Closures // 闭包
     case Enumerations // 枚举
     case StructuresAndClasses // 类和结构体
+    case Properties // 属性
 }
 
 class BaseViewController: UIViewController {

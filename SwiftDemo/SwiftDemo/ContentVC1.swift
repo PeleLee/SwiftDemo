@@ -49,7 +49,56 @@ class ContentVC1: BaseViewController  {
             self.enumerations()
         case .StructuresAndClasses:
             self.structuresAndClasses()
+        case .Properties:
+            self.properties()
         }
+    }
+    
+    private func properties() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "代码在Properties.playground中"+myLB,
+                     "属性存在的场景："+mySingleLB,
+                     "* 类"+mySingleLB,
+                     "* 结构体"+mySingleLB,
+                     "* 枚举"+myLB,
+                     "计算属性与存储属性的区别：是直接计算而不是存储值。"+mySingleLB,
+                     "存储属性存在的地方："+mySingleLB,
+                     "* 类"+mySingleLB,
+                     "* 结构体"+mySingleLB,
+                     "计算属性存在的地方："+mySingleLB,
+                     "* 类"+mySingleLB,
+                     "* 结构体"+mySingleLB,
+                     "* 枚举"+myLB,
+                     "类型属性：直接与类型本身关联，而不是和特定类型的实例关联。"+myLB,
+                     "常量(let)结构体实例的存储属性："+mySingleLB,
+                     "即使存储属性是变量，也无法修改，因为结构体属于值类型，实例为常量时，所有的属性也就成了常量。"+myLB,
+                     "lazy:延时加载var类型的存储属性。"+myLB,
+                     "只读计算属性：只有getter没有setter。"+mySingleLB,
+                     "必须使用var关键字修饰，因为值时不固定的。注意区分与用let修饰的属性的区别。"+myLB,
+                     "willSet和didSet：属性观察器。"+mySingleLB,
+                     "在属性观察器中修改改属性的值，不会造成属性观察器被再次调用。"+myLB,
+                     "@propertyWrapper：属性包装器，在管理属性如何存储和定义属性的代码之间添加了一个分隔层，编写一次管理代码，然后应用到多个属性上来进行复用。"+mySingleLB,
+                     "通过为属性包装器添加带实参的构造器方法，来提供初始化被包装属性的初始值。有多种调用构造器的方法，可在playground中查看。"+myLB,
+                     "可以从属性包装器中呈现一个值，使用projectedValue变量名表示被暴露出的值，访问该值时用$来访问。"+mySingleLB,
+                     "当在属性内部访问包装器的被呈现值时，可以省略(self.)，与访问其他属性没有差别。"+myLB,
+                     "属性包装器只是具有getter和setter的属性的语法糖。"+myLB,
+                     "全局变量和常量都是延迟计算，并且不需要标记lazy修饰符。局部常量或变量从不延迟计算。"+myLB,
+                     "static，定义类型属性，调用时用类型本身来访问，而不是通过实例。"+mySingleLB,
+                     "class来替换static，表示支持子类对父类的(类型属性)进行重写。"+myLB,
+                     myLB]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func structuresAndClasses() {
@@ -58,7 +107,7 @@ class ContentVC1: BaseViewController  {
         let mySingleLB = self.mySingleLineBreak()
         let notes = [myLB,
                      statementStr1 + myLB,
-                     "代码在StringsAndCharacters.playground中。"+myLB,
+                     "代码在StructuresAndClasses.playground中。"+myLB,
                      "Swift中结构体和类的功能更加相近，大部分功能都可以用在结构体或者类上。"+mySingleLB,
                      "结构体和类都可以用实例这个术语。"+myLB,
                      "类的功能更多，但是以增加复杂度为代价的，优先使用结构体，因为他们更容易理解。"+mySingleLB,

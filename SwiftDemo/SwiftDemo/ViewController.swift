@@ -55,6 +55,14 @@ class ViewController: BaseViewController {
         let button11 = self.myButton(title: "类和结构体", action: #selector(structuresAndClasses))
         myScrollView!.addSubview(button11)
         self.increaseScrollViewContentH()
+        
+        let button12 = self.myButton(title: "属性", action: #selector(properties))
+        myScrollView!.addSubview(button12)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func properties() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Properties), animated: true)
     }
     
     @objc private func structuresAndClasses() {
