@@ -59,6 +59,14 @@ class ViewController: BaseViewController {
         let button12 = self.myButton(title: "属性", action: #selector(properties))
         myScrollView!.addSubview(button12)
         self.increaseScrollViewContentH()
+        
+        let button13 = self.myButton(title: "方法", action: #selector(methods))
+        myScrollView!.addSubview(button13)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func methods() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Methods), animated: true)
     }
     
     @objc private func properties() {

@@ -51,7 +51,44 @@ class ContentVC1: BaseViewController  {
             self.structuresAndClasses()
         case .Properties:
             self.properties()
+        case .Methods:
+            self.methods()
         }
+    }
+    
+    private func methods() {
+        var note = ""
+        let myLB = self.myLineBreak()
+        let mySingleLB = self.mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1+myLB,
+                     "代码在Methods.playground中。"+myLB,
+                     "实例方法与类型方法存在场景："+mySingleLB,
+                     "* 类"+mySingleLB,
+                     "* 结构体"+mySingleLB,
+                     "* 枚举"+mySingleLB,
+                     "结构体和枚举能够定义方法是Swift与C/OC的主要区别之一。"+myLB,
+                     "不必在代码里经常写self，只要在一个方法中使用一个已知的属性或者方法名称，如果没有明确写self，Swift假定你是指当前实例的属性或者方法。"+mySingleLB,
+                     "实例方法的某个参数名称与实例的某个属性名称相同时，可以使用self属性来消除歧义。"+myLB,
+                     "mutating关键字：表明可以在值类型的实例方法中修改属性值。"+mySingleLB,
+                     "可变方法（mutating修饰的）会给隐含的self属性赋予一个全新的实例，新实例在方法结束时会替换现存实例。"+mySingleLB,
+                     "也可以在可变方法中显式给self赋值。"+mySingleLB,
+                     "枚举的可变方法可以把self设置为同一枚举类型中不同的成员。"+myLB,
+                     "类型方法的关键字："+mySingleLB,
+                     "* static：类、结构体、枚举中，加在func前表示类型方法。"+mySingleLB,
+                     "* class：类中，表示该类型方法可以被子类重写。"+myLB,
+                     "类型方法中，self指向这个类型本身，可以用self来消除类型属性和类型方法参数之间的歧义。"+myLB,
+                     "@discardableResult标注，声明可忽略返回值。"+myLB,
+                     ]
+        
+        for noteItem in notes {
+            note += noteItem
+        }
+        
+        let label = self.myLabel(title: note)
+        self.changeLabelHeight(label: label, text: note)
+        self.myScrollView?.addSubview(label)
+        self.increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func properties() {
