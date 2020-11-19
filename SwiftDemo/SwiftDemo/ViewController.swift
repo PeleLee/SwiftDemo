@@ -63,6 +63,22 @@ class ViewController: BaseViewController {
         let button13 = self.myButton(title: "方法", action: #selector(methods))
         myScrollView!.addSubview(button13)
         self.increaseScrollViewContentH()
+        
+        let button14 = self.myButton(title: "下标", action: #selector(subscripts))
+        myScrollView!.addSubview(button14)
+        self.increaseScrollViewContentH()
+        
+        let button15 = self.myButton(title: "继承", action: #selector(inheritance))
+        myScrollView!.addSubview(button15)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func inheritance() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Inheritance), animated: true)
+    }
+    
+    @objc private func subscripts() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Subscripts), animated: true)
     }
     
     @objc private func methods() {

@@ -22,6 +22,8 @@ enum ChapterType {
     case StructuresAndClasses // 类和结构体
     case Properties // 属性
     case Methods // 方法
+    case Subscripts // 下标
+    case Inheritance // 继承
 }
 
 class BaseViewController: UIViewController {
@@ -40,6 +42,8 @@ class BaseViewController: UIViewController {
     var buttonW: CGFloat = 0
     
     let statementStr1 = "仅为我个人认为需要做的笔记。"
+    let separatorStr1 = "\n---------------------------------"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
