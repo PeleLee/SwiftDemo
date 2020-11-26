@@ -24,6 +24,7 @@ enum ChapterType {
     case Methods // 方法
     case Subscripts // 下标
     case Inheritance // 继承
+    case Initialization // 构造过程
 }
 
 class BaseViewController: UIViewController {

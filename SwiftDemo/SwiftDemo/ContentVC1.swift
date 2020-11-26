@@ -55,7 +55,32 @@ class ContentVC1: BaseViewController {
             subscripts()
         case .Inheritance:
             inheritance()
+        case .Initialization:
+            initialization()
         }
+    }
+
+    private func initialization() {
+        var note = ""
+        let myLB = myLineBreak()
+        let mySingleLB = mySingleLineBreak()
+        let notes = [myLB,
+                     statementStr1,
+                     separatorStr1 + myLB,
+                     "内容整理在 Swift.xmind中",
+                     separatorStr1 + myLB,
+                     "代码在Subscripts.playground中",
+                     separatorStr1 + myLB,
+        ]
+
+        for noteItem in notes {
+            note += noteItem
+        }
+
+        let label = myLabel(title: note)
+        changeLabelHeight(label: label, text: note)
+        myScrollView?.addSubview(label)
+        increaseCustomScrollViewContentH(customH: label.frame.height)
     }
 
     private func inheritance() {
@@ -65,7 +90,7 @@ class ContentVC1: BaseViewController {
         let notes = [myLB,
                      statementStr1,
                      separatorStr1 + myLB,
-                     "子类可以调用和访问父类的："+myLB,
+                     "子类可以调用和访问父类的：" + myLB,
                      " * 方法" + mySingleLB,
                      " * 属性" + mySingleLB,
                      " * 下标",
@@ -83,9 +108,9 @@ class ContentVC1: BaseViewController {
                      "防止重写：" + myLB,
                      "* 关键字：final" + mySingleLB,
                      "* 可修饰 var、func、class、subscript 等" + mySingleLB,
-                     "* 可修饰 class，表明类不可以被继承" + myLB
+                     "* 可修饰 class，表明类不可以被继承" + myLB,
         ]
-                    
+
         for noteItem in notes {
             note += noteItem
         }
@@ -95,7 +120,7 @@ class ContentVC1: BaseViewController {
         myScrollView?.addSubview(label)
         increaseCustomScrollViewContentH(customH: label.frame.height)
     }
-    
+
     private func subscripts() {
         var note = ""
         let myLB = myLineBreak()
@@ -112,9 +137,9 @@ class ContentVC1: BaseViewController {
                      "关键字：" + mySingleLB,
                      "subscript" + myLB,
                      "与实例方法的对比：" + myLB,
-                     "相同点："+mySingleLB,
-                     "* 传入一个或者多个输入参数和一个返回类型。"+myLB,
-                     "不同点："+mySingleLB,
+                     "相同点：" + mySingleLB,
+                     "* 传入一个或者多个输入参数和一个返回类型。" + myLB,
+                     "不同点：" + mySingleLB,
                      "* 下标可以设定为读写或只读。由getter和setter实现，类似计算型属性。" + myLB,
                      "有一套完整的写法，也有省略set方法和省略get关键字的简化写法，简化规则可以到教程中回顾。",
                      separatorStr1 + myLB,
@@ -126,10 +151,10 @@ class ContentVC1: BaseViewController {
                      "下标的重载：" + myLB,
                      "一个类或结构体可以根据自身需要提供多个下标实现，使用时将通过入参的数量和类型进行区分，自动匹配合适的下标。",
                      separatorStr1 + myLB,
-                     "实例下标与类型下标："+myLB,
-                     "* 分别在特定类型的实例上调用和在特定类型子身上调用。"+mySingleLB,
-                     "* 在subscript关键字前 + static 表示类型下标。"+mySingleLB,
-                     "* 使用class代替static，允许子类重写父类对该下标的实现。"
+                     "实例下标与类型下标：" + myLB,
+                     "* 分别在特定类型的实例上调用和在特定类型子身上调用。" + mySingleLB,
+                     "* 在subscript关键字前 + static 表示类型下标。" + mySingleLB,
+                     "* 使用class代替static，允许子类重写父类对该下标的实现。",
         ]
 
         for noteItem in notes {
