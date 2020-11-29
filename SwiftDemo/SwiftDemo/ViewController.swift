@@ -75,6 +75,22 @@ class ViewController: BaseViewController {
         let button16 = self.myButton(title: "构造过程", action: #selector(initialization))
         myScrollView!.addSubview(button16)
         self.increaseScrollViewContentH()
+        
+        let button17 = self.myButton(title: "析造过程", action: #selector(deinitialization))
+        myScrollView!.addSubview(button17)
+        self.increaseScrollViewContentH()
+        
+        let button18 = self.myButton(title: "可选链", action: #selector(deinitialization))
+        myScrollView!.addSubview(button18)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func optionalChaining() {
+        self.navigationController?.pushViewController(ContentVC1(type: .OptionalChaining), animated: true)
+    }
+    
+    @objc private func deinitialization() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Deinitialization), animated: true)
     }
     
     @objc private func initialization() {

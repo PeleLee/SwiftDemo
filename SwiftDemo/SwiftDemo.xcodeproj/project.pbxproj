@@ -32,7 +32,9 @@
 		9B79A4C324EB56F0000856A0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B79A4C624EB56F0000856A0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9B79A4C824EB56F0000856A0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B83A41E256F4B38005925F1 /* DeInitialization.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = DeInitialization.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BB680722522B48D00476D71 /* StructuresAndClasses.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructuresAndClasses.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9BC428AA2573628A00FB8503 /* OptionalChaining.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OptionalChaining.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9687D25216E1A00A406BD /* StringsAndCharacters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StringsAndCharacters.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9687F25216EE400A406BD /* BasicOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BasicOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9688125216EED00A406BD /* Closures.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Closures.playground; sourceTree = "<group>"; };
@@ -79,6 +81,8 @@
 				9B197BA024EDFFA8002A90BE /* BaseViewController.swift */,
 				9B79A4BE24EB56EE000856A0 /* ViewController.swift */,
 				9B3A1A7824ECA8D000BAD1AF /* ContentVC1.swift */,
+				9BC428AA2573628A00FB8503 /* OptionalChaining.playground */,
+				9B83A41E256F4B38005925F1 /* DeInitialization.playground */,
 				9B0C73D02567479C000A783B /* Initialization.playground */,
 				9B34DBEC2558CA1700E9D0B8 /* Subscripts.playground */,
 				9B69A573253927310041D2E8 /* Methods.playground */,

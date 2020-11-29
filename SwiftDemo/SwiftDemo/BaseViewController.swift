@@ -25,6 +25,8 @@ enum ChapterType {
     case Subscripts // 下标
     case Inheritance // 继承
     case Initialization // 构造过程
+    case Deinitialization // 析构过程
+    case OptionalChaining // 可选链
 }
 
 class BaseViewController: UIViewController {

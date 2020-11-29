@@ -57,9 +57,57 @@ class ContentVC1: BaseViewController {
             inheritance()
         case .Initialization:
             initialization()
+        case .Deinitialization:
+            deInitialization()
+        case .OptionalChaining:
+            optionalChaining()
         }
     }
+    
+    private func optionalChaining() {
+        var note = ""
+        let myLB = myLineBreak()
+        let notes = [myLB,
+                     statementStr1,
+                     separatorStr1 + myLB,
+                     "内容整理在 Swift.xmind中",
+                     separatorStr1 + myLB,
+                     "代码在OptionalChaining.playground中",
+                     separatorStr1 + myLB,
+        ]
 
+        for noteItem in notes {
+            note += noteItem
+        }
+
+        let label = myLabel(title: note)
+        changeLabelHeight(label: label, text: note)
+        myScrollView?.addSubview(label)
+        increaseCustomScrollViewContentH(customH: label.frame.height)
+    }
+
+    private func deInitialization() {
+        var note = ""
+        let myLB = myLineBreak()
+        let notes = [myLB,
+                     statementStr1,
+                     separatorStr1 + myLB,
+                     "内容整理在 Swift.xmind中",
+                     separatorStr1 + myLB,
+                     "代码在DeInitialization.playground中",
+                     separatorStr1 + myLB,
+        ]
+
+        for noteItem in notes {
+            note += noteItem
+        }
+
+        let label = myLabel(title: note)
+        changeLabelHeight(label: label, text: note)
+        myScrollView?.addSubview(label)
+        increaseCustomScrollViewContentH(customH: label.frame.height)
+    }
+    
     private func initialization() {
         var note = ""
         let myLB = myLineBreak()
@@ -69,7 +117,7 @@ class ContentVC1: BaseViewController {
                      separatorStr1 + myLB,
                      "内容整理在 Swift.xmind中",
                      separatorStr1 + myLB,
-                     "代码在Subscripts.playground中",
+                     "代码在Initialization.playground中",
                      separatorStr1 + myLB,
         ]
 
