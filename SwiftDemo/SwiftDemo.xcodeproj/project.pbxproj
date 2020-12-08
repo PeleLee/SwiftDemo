@@ -20,6 +20,7 @@
 /* Begin PBXFileReference section */
 		9B0C73D02567479C000A783B /* Initialization.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Initialization.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9B197BA024EDFFA8002A90BE /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		9B1DDB03257737BF00E6AD4A /* TypeCasting.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TypeCasting.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9B34DBEC2558CA1700E9D0B8 /* Subscripts.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Subscripts.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9B3A1A7824ECA8D000BAD1AF /* ContentVC1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentVC1.swift; sourceTree = "<group>"; };
 		9B5401F92532AA7900E7DBED /* Properties.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Properties.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -82,6 +83,7 @@
 				9B197BA024EDFFA8002A90BE /* BaseViewController.swift */,
 				9B79A4BE24EB56EE000856A0 /* ViewController.swift */,
 				9B3A1A7824ECA8D000BAD1AF /* ContentVC1.swift */,
+				9B1DDB03257737BF00E6AD4A /* TypeCasting.playground */,
 				9BC428AC2575D00100FB8503 /* ErrorHandling.playground */,
 				9BC428AA2573628A00FB8503 /* OptionalChaining.playground */,
 				9B83A41E256F4B38005925F1 /* DeInitialization.playground */,

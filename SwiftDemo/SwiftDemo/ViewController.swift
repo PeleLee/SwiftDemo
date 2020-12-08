@@ -80,17 +80,25 @@ class ViewController: BaseViewController {
         myScrollView!.addSubview(button17)
         self.increaseScrollViewContentH()
         
-        let button18 = self.myButton(title: "可选链", action: #selector(deinitialization))
+        let button18 = self.myButton(title: "可选链", action: #selector(optionalChaining))
         myScrollView!.addSubview(button18)
         self.increaseScrollViewContentH()
         
         let button19 = self.myButton(title: "错误处理", action: #selector(errorHandling))
         myScrollView!.addSubview(button19)
         self.increaseScrollViewContentH()
+        
+        let button20 = self.myButton(title: "类型转换", action: #selector(typeCasting))
+        myScrollView!.addSubview(button20)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func typeCasting() {
+        self.navigationController?.pushViewController(ContentVC1(type: .TypeCasting), animated: true)
     }
     
     @objc private func errorHandling() {
-        self.navigationController?.pushViewController(ContentVC1(type: .OptionalChaining), animated: true)
+        self.navigationController?.pushViewController(ContentVC1(type: .ErrorHandling), animated: true)
     }
     
     @objc private func optionalChaining() {
