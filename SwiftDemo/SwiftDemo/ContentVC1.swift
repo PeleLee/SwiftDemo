@@ -65,7 +65,31 @@ class ContentVC1: BaseViewController {
             errorHandling()
         case .TypeCasting:
             typeCasting()
+        case .NestedTypes:
+            nestedTypes()
         }
+    }
+    
+    private func nestedTypes() {
+        var note = ""
+        let myLB = myLineBreak()
+        let notes = [myLB,
+                     statementStr1,
+                     separatorStr1 + myLB,
+                     "内容整理在 Swift.xmind中",
+                     separatorStr1 + myLB,
+                     "代码在 .playground 中",
+                     separatorStr1 + myLB,
+        ]
+
+        for noteItem in notes {
+            note += noteItem
+        }
+
+        let label = myLabel(title: note)
+        changeLabelHeight(label: label, text: note)
+        myScrollView?.addSubview(label)
+        increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func typeCasting() {

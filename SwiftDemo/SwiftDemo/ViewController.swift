@@ -91,6 +91,14 @@ class ViewController: BaseViewController {
         let button20 = self.myButton(title: "类型转换", action: #selector(typeCasting))
         myScrollView!.addSubview(button20)
         self.increaseScrollViewContentH()
+        
+        let button21 = self.myButton(title: "嵌套类型", action: #selector(nestedTypes))
+        myScrollView!.addSubview(button21)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func nestedTypes() {
+        self.navigationController?.pushViewController(ContentVC1(type: .NestedTypes), animated: true)
     }
     
     @objc private func typeCasting() {

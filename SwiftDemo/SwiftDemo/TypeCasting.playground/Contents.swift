@@ -93,3 +93,12 @@ for thing in things {
         print("something else.")
     }
 }
+
+// 5
+myPrint("Any 承载可选值")
+
+let optionalNumber: Int? = 3
+// 有警告
+//things.append(optionalNumber)
+// 没有警告
+things.append(optionalNumber as Any)
