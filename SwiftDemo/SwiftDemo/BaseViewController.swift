@@ -30,6 +30,7 @@ enum ChapterType {
     case ErrorHandling // 错误处理
     case TypeCasting // 类型转换
     case NestedTypes // 嵌套类型
+    case Extensions // 扩展
 }
 
 class BaseViewController: UIViewController {

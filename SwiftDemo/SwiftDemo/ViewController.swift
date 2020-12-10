@@ -95,6 +95,14 @@ class ViewController: BaseViewController {
         let button21 = self.myButton(title: "嵌套类型", action: #selector(nestedTypes))
         myScrollView!.addSubview(button21)
         self.increaseScrollViewContentH()
+        
+        let button22 = self.myButton(title: "扩展", action: #selector(extensions))
+        myScrollView!.addSubview(button22)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func extensions() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Extensions), animated: true)
     }
     
     @objc private func nestedTypes() {

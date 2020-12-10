@@ -47,6 +47,7 @@
 		9BD9688925216F1000A406BD /* Enumerations.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Enumerations.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9688B25216F1800A406BD /* Functions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Functions.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9688D25216F2500A406BD /* TheBasicsPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = TheBasicsPlayground.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9BE13948258058FB00C140B9 /* Extensions.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Extensions.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +85,7 @@
 				9B197BA024EDFFA8002A90BE /* BaseViewController.swift */,
 				9B79A4BE24EB56EE000856A0 /* ViewController.swift */,
 				9B3A1A7824ECA8D000BAD1AF /* ContentVC1.swift */,
+				9BE13948258058FB00C140B9 /* Extensions.playground */,
 				9B058AAD257F14D10049FC13 /* NestedTypes.playground */,
 				9B1DDB03257737BF00E6AD4A /* TypeCasting.playground */,
 				9BC428AC2575D00100FB8503 /* ErrorHandling.playground */,
