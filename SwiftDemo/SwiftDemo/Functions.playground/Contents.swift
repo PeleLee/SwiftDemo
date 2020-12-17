@@ -1,10 +1,27 @@
 import UIKit
 
 func myPrint(info: String) {
-    print("🐤🐤🐤打印内容----------", info)
+    print("--------------------🐤🐤🐤打印内容：" + info)
 }
 
-myPrint(info: "函数的元组返回值命名")
+// 1
+myPrint(info: "无参数函数")
+
+func sayHelloWorld() {
+    print("Hello, Swift.")
+}
+
+sayHelloWorld()
+
+// 2
+myPrint(info: "无返回值函数的返回值")
+
+let tmp0 = sayHelloWorld()
+print(tmp0)
+
+// 3
+myPrint(info: "返回值为元组类型的函数")
+
 func minMax(array: [Int]) -> (min: Int, max: Int)? {
     if array.isEmpty {
         return nil
@@ -27,20 +44,38 @@ print("bounds min is \(String(describing: bounds?.min)) and max is \(String(desc
 let bounds2 = minMax(array: [])
 print("bounds2 min is \(String(describing: bounds2?.min)) and max is \(String(describing: bounds2?.max))")
 
+// 4
 myPrint(info: "隐式返回的函数")
 func greeting(for person: String) -> String {
     "Hello," + person + "!"
 }
 print(greeting(for: "Dave"))
 
+func anotherGreeting(for person: String) -> String {
+    return "Hello," + person + "!"
+}
+print(anotherGreeting(for: "Dave"))
+
+// 5
+myPrint(info: "指定参数标签")
+
+func greet(person: String, from hometown: String) -> String {
+    return "欢迎来自\(hometown)的\(person)! "
+}
+print(greet(person: "外星人", from: "火星"))
+
+// 6
 myPrint(info: "忽略参数标签")
+
 func someFunction(_ firstParameterName: Int, secondParameterName: Int) {
-    print("奉俊昊")
+    print("寄生虫")
 }
 someFunction(1, secondParameterName: 2)
 
+// 7
 myPrint(info: "默认参数值")
-func someFunction(parameterWithoutDefault firstValue: Int, parameterWithDefault secondValue: Int = 12) {
+func someFunction(parameterWithoutDefault firstValue: Int,
+                  parameterWithDefault secondValue: Int = 12) {
     print("杀人回忆 \(firstValue) and \(secondValue).")
 }
 someFunction(parameterWithoutDefault: 3, parameterWithDefault: 4)
@@ -52,7 +87,9 @@ func someFunction(parameterWithDefalt firstValue: Int = 12, parameterWithoutDefa
 someFunction(parameterWithDefalt: 6, parameterWithoutDefalut2: 7)
 someFunction(parameterWithoutDefalut2: 8)
 
+// 8
 myPrint(info: "可变参数")
+
 func arithmeticMean(_ numbers: Double...) -> Double {
     var total: Double = 0
     for number in numbers {
@@ -63,7 +100,9 @@ func arithmeticMean(_ numbers: Double...) -> Double {
 arithmeticMean(1, 2, 3, 4, 5)
 arithmeticMean(3, 8.25, 18.75)
 
+// 9
 myPrint(info: "输入输出参数 inout")
+
 func swapTowInts(_ a: inout Int, _ b: inout Int) {
     let temporaryA = a
     a = b
@@ -76,6 +115,7 @@ print("交换前 someInt:\(someInt) anotherInt:\(anotherInt)")
 swapTowInts(&someInt, &anotherInt)
 print("交换后 someInt:\(someInt) anotherInt:\(anotherInt)")
 
+// 10
 myPrint(info: "使用函数类型作为变量")
 func addTwoInts(_ a: Int, _ b: Int) -> Int {
     return a + b
@@ -90,14 +130,18 @@ print("Result: \(mathFunction(9, 10))")
 mathFunction = multiplyTwoInts
 print("Result: \(mathFunction(9, 10))")
 
+// 11
 myPrint(info: "使用函数类型作为函数参数")
+
 func printMathResult(_ mathFunction:(Int, Int) -> Int, _ a: Int, _ b: Int) {
     print("Results: \(mathFunction(a, b)).")
 }
 printMathResult(addTwoInts, 7, 8)
 printMathResult(multiplyTwoInts, 7, 8)
 
+// 12
 myPrint(info: "使用函数类型作为函数返回值")
+
 func stepForward(_ input: Int) -> Int {
     return input + 1
 }
@@ -117,7 +161,9 @@ while currentValue != 0 {
 }
 print("zero!")
 
+// 13
 myPrint(info: "嵌套函数")
+
 func chooseStepFunction2(backward: Bool) -> ((Int)->Int) {
     func stepForward2(input: Int) -> Int {input+1}
     func stepBackward2(input: Int) -> Int {input-1}
