@@ -99,6 +99,14 @@ class ViewController: BaseViewController {
         let button22 = self.myButton(title: "扩展", action: #selector(extensions))
         myScrollView!.addSubview(button22)
         self.increaseScrollViewContentH()
+        
+        let button23 = self.myButton(title: "协议", action: #selector(protocols))
+        myScrollView!.addSubview(button23)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func protocols() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Protocols), animated: true)
     }
     
     @objc private func extensions() {
