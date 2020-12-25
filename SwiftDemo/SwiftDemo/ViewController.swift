@@ -103,6 +103,14 @@ class ViewController: BaseViewController {
         let button23 = self.myButton(title: "协议", action: #selector(protocols))
         myScrollView!.addSubview(button23)
         self.increaseScrollViewContentH()
+        
+        let button24 = self.myButton(title: "泛型", action: #selector(generics))
+        myScrollView!.addSubview(button24)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func generics() {
+        self.navigationController?.pushViewController(ContentVC1(type: .Generics), animated: true)
     }
     
     @objc private func protocols() {

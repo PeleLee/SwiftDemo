@@ -5,7 +5,7 @@ func printTag(tag: String) {
 }
 
 // 1
-printTag(tag: "for-in 遍历字典")
+printTag(tag: "for-in 遍历字典键值对")
 
 let numberOfLegs = ["🕷️": 8, "🐜": 6, "🐱": 4]
 for (animalName, legCount) in numberOfLegs {
@@ -90,16 +90,16 @@ else if temperatureInfahrenheit >= 86 {
 
 // 7
 printTag(tag: "Switch case 错误写法")
-/*
+
 let anotherCharacter0: Character = "a"
 switch anotherCharacter0 {
 case "a":
-//    fallthrough
+    fallthrough
 case "A":
     print("The letter A")
 default:
     print("Not eht letter A")
-}*/
+}
 
 
 let anotherCharacter: Character = "A"
@@ -238,12 +238,12 @@ func greet(person: [String: String]) {
     guard let name = person["name"] else {
         return
     }
-    /*var name2 = ""
-    if let name = person["name"] {
-        name2 = name
-    } else {
-        return
-    }*/
+//    var name2 = ""
+//    if let name = person["name"] {
+//        name2 = name
+//    } else {
+//        return
+//    }
     print("Hello \(name)!")
     guard let location = person["location"] else {
         print("I hope the weather is nice near you.")
