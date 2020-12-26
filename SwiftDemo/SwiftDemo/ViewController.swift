@@ -107,6 +107,14 @@ class ViewController: BaseViewController {
         let button24 = self.myButton(title: "泛型", action: #selector(generics))
         myScrollView!.addSubview(button24)
         self.increaseScrollViewContentH()
+        
+        let button25 = self.myButton(title: "不透明类型", action: #selector(generics))
+        myScrollView!.addSubview(button25)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func opaqueTypes() {
+        self.navigationController?.pushViewController(ContentVC1(type: .OpaqueTypes), animated: true)
     }
     
     @objc private func generics() {

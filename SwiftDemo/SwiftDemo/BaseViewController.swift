@@ -33,6 +33,7 @@ enum ChapterType {
     case Extensions // 扩展
     case Protocols // 协议
     case Generics // 泛型
+    case OpaqueTypes // 不透明类型
 }
 
 class BaseViewController: UIViewController {
