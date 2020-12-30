@@ -75,7 +75,31 @@ class ContentVC1: BaseViewController {
             generics()
         case .OpaqueTypes:
             opaqueTypes()
+        case .AutomaticReferenceCounting:
+            automaticReferenceCounting()
         }
+    }
+    
+    private func automaticReferenceCounting() {
+        var note = ""
+        let myLB = myLineBreak()
+        let notes = [myLB,
+                     statementStr1,
+                     separatorStr1 + myLB,
+                     "内容整理在 Swift.xmind中",
+                     separatorStr1 + myLB,
+                     "代码在 AutomaticReferenceCounting.playground 中",
+                     separatorStr1 + myLB,
+        ]
+
+        for noteItem in notes {
+            note += noteItem
+        }
+
+        let label = myLabel(title: note)
+        changeLabelHeight(label: label, text: note)
+        myScrollView?.addSubview(label)
+        increaseCustomScrollViewContentH(customH: label.frame.height)
     }
     
     private func opaqueTypes() {

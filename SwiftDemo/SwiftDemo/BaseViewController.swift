@@ -34,6 +34,7 @@ enum ChapterType {
     case Protocols // 协议
     case Generics // 泛型
     case OpaqueTypes // 不透明类型
+    case AutomaticReferenceCounting // 自动引用计数
 }
 
 class BaseViewController: UIViewController {

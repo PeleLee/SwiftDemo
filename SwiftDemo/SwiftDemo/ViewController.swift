@@ -111,6 +111,14 @@ class ViewController: BaseViewController {
         let button25 = self.myButton(title: "不透明类型", action: #selector(generics))
         myScrollView!.addSubview(button25)
         self.increaseScrollViewContentH()
+        
+        let button26 = self.myButton(title: "自动引用计数", action: #selector(automaticReferenceCounting))
+        myScrollView!.addSubview(button26)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func automaticReferenceCounting() {
+        self.navigationController?.pushViewController(ContentVC1(type: .AutomaticReferenceCounting), animated: true)
     }
     
     @objc private func opaqueTypes() {
