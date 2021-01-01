@@ -115,6 +115,14 @@ class ViewController: BaseViewController {
         let button26 = self.myButton(title: "自动引用计数", action: #selector(automaticReferenceCounting))
         myScrollView!.addSubview(button26)
         self.increaseScrollViewContentH()
+        
+        let button27 = self.myButton(title: "内存安全", action: #selector(memorySafety))
+        myScrollView!.addSubview(button27)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func memorySafety() {
+        self.navigationController?.pushViewController(ContentVC1(type: .MemorySafety), animated: true)
     }
     
     @objc private func automaticReferenceCounting() {
