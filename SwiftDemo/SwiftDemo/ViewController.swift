@@ -119,6 +119,14 @@ class ViewController: BaseViewController {
         let button27 = self.myButton(title: "内存安全", action: #selector(memorySafety))
         myScrollView!.addSubview(button27)
         self.increaseScrollViewContentH()
+        
+        let button28 = self.myButton(title: "访问控制", action: #selector(accessControl))
+        myScrollView!.addSubview(button28)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func accessControl() {
+        self.navigationController?.pushViewController(ContentVC1(type: .AccessControl), animated: true)
     }
     
     @objc private func memorySafety() {

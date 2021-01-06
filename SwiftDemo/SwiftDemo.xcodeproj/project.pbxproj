@@ -42,6 +42,7 @@
 		9BB680722522B48D00476D71 /* StructuresAndClasses.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StructuresAndClasses.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BC428AA2573628A00FB8503 /* OptionalChaining.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = OptionalChaining.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BC428AC2575D00100FB8503 /* ErrorHandling.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = ErrorHandling.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		9BCEE199259F6E53004CED7A /* AccessControl.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = AccessControl.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD0636E2591843800EE1411 /* Generics.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Generics.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9687D25216E1A00A406BD /* StringsAndCharacters.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = StringsAndCharacters.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		9BD9687F25216EE400A406BD /* BasicOperator.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = BasicOperator.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -90,6 +91,7 @@
 				9B197BA024EDFFA8002A90BE /* BaseViewController.swift */,
 				9B79A4BE24EB56EE000856A0 /* ViewController.swift */,
 				9B3A1A7824ECA8D000BAD1AF /* ContentVC1.swift */,
+				9BCEE199259F6E53004CED7A /* AccessControl.playground */,
 				9BA83ED9259C1F6F00181CAF /* MemorySafety.playground */,
 				9B22648625983CE7003A4FA4 /* AutomaticReferenceCounting.playground */,
 				9B4605B22595700600561379 /* OpaqueTypes.playground */,

@@ -36,6 +36,7 @@ enum ChapterType {
     case OpaqueTypes // 不透明类型
     case AutomaticReferenceCounting // 自动引用计数
     case MemorySafety // 内存安全
+    case AccessControl // 访问控制
 }
 
 class BaseViewController: UIViewController {
