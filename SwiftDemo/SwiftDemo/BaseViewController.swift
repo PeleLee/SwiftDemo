@@ -37,6 +37,7 @@ enum ChapterType {
     case AutomaticReferenceCounting // 自动引用计数
     case MemorySafety // 内存安全
     case AccessControl // 访问控制
+    case AdvancedOperators // 高级运算符
 }
 
 class BaseViewController: UIViewController {

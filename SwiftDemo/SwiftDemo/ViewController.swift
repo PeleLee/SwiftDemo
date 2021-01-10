@@ -123,6 +123,14 @@ class ViewController: BaseViewController {
         let button28 = self.myButton(title: "访问控制", action: #selector(accessControl))
         myScrollView!.addSubview(button28)
         self.increaseScrollViewContentH()
+        
+        let button29 = self.myButton(title: "高级运算符", action: #selector(advancedOperators))
+        myScrollView!.addSubview(button29)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func advancedOperators() {
+        self.navigationController?.pushViewController(ContentVC1(type: .AdvancedOperators), animated: true)
     }
     
     @objc private func accessControl() {
