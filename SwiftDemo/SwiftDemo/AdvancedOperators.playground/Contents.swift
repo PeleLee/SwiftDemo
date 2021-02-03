@@ -171,3 +171,55 @@ extension Vector2D {
 let firstVector = Vector2D(x: 1.0, y: 2.0)
 let secondVector = Vector2D(x: 3.0, y: 4.0)
 let plusMinusVector = firstVector +- secondVector
+
+// 14
+myPrint("使用 type(of:) 获取元类型")
+
+class SomeBaseClass {
+    class func printClassName() {
+        print("SomeBaseClass")
+    }
+}
+
+class SomeSubClass: SomeBaseClass {
+    override class func printClassName() {
+        print("SomeSubClass")
+    }
+}
+
+let someInstance: SomeBaseClass = SomeSubClass()
+type(of: someInstance).printClassName()
+
+// 15
+myPrint("自身类型 Self")
+
+class Superclass {
+    func f() -> Self {return self}
+}
+
+let x = Superclass()
+print(type(of: x.f()))
+
+class Subclass: Superclass { }
+
+let y = Subclass()
+print(type(of: y.f()))
+
+let z: Superclass = Subclass()
+print(type(of: z.f()))
+
+// 16
+myPrint("类型转化表达式")
+
+func f(any: Any) { print("Function for Any") }
+func f(int: Int) { print("Function for Int") }
+
+let xInt = 10
+f(int: xInt)
+
+let yAny: Any = xInt
+f(any: yAny)
+
+f(any: x as Any)
+
+

@@ -127,6 +127,14 @@ class ViewController: BaseViewController {
         let button29 = self.myButton(title: "高级运算符", action: #selector(advancedOperators))
         myScrollView!.addSubview(button29)
         self.increaseScrollViewContentH()
+        
+        let button30 = self.myButton(title: "语言参考", action: #selector(languageReference))
+        myScrollView!.addSubview(button30)
+        self.increaseScrollViewContentH()
+    }
+    
+    @objc private func languageReference() {
+        self.navigationController?.pushViewController(ContentVC1(type: .LanguageReference), animated: true)
     }
     
     @objc private func advancedOperators() {
