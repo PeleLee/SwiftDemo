@@ -1,4 +1,5 @@
 import UIKit
+import PhotosUI
 
 func myPrint(_ info: String) {
     print("🐤🐤🐤------------------------------", info)
@@ -360,3 +361,33 @@ let dynamic = s24.someDynamicMember
 
 let equivalent = s24[dynamicMember: "someDynamicMember"]
 print(dynamic == equivalent)
+
+// 25
+myPrint("可选模式")
+
+let someInt: Int? = 41
+
+if let x = someInt {
+    print(x)
+}
+
+if case .some(let x) = someInt {
+    print(x)
+}
+
+if case let x? = someInt {
+    print(x)
+}
+
+let arrayOfOptionalInts: [Int?] = [nil, 2, 3, nil, 5]
+for case let number? in arrayOfOptionalInts {
+    print("Found a \(number)")
+}
+
+class PhotoVC: UIViewController {
+    var library: PHPhotoLibrary = PHPhotoLibrary.shared()
+}
+
+let test = PhotoVC()
+
+
