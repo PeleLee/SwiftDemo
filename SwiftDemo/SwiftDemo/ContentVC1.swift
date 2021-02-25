@@ -954,6 +954,7 @@ class ContentVC1: BaseViewController {
         let myLB = myLineBreak()
         note += statementStr1 + myLB
         note += "<< 代码在ContentVC1.playground文件中。" + myLB
+        note += "知识点整理在 Swift.xmind 中。" + myLB
 
         let label = myLabel(title: note)
         changeLabelHeight(label: label, text: note)

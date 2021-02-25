@@ -1,6 +1,270 @@
 import UIKit
 import PhotosUI
 
+
+class LookingForPoison {
+    /*
+     <：(宰相毒药药性 < 御医毒药药性)
+     =：(宰相毒药药性 = 御医毒药药性)
+     >：(宰相毒药药性 > 御医毒药药性)
+     */
+    static let waterP = 0
+    static let weakP = 1
+    static let strongP = 2
+    let drugProperties: [(Int, Int)] = [(weakP, strongP), (strongP, strongP), (strongP, weakP)]
+    // minister：宰相 doctor：医生
+    // 宰相是否在进宫前喝药
+    let mMedicineInAdvanceValues = [true, false]
+    // 御医是否在进宫前喝药
+    let dMedicineInAdvanceValues = [true, false]
+    // 宰相是否带药进宫，true：带药进宫，false：带水进宫
+    let mCarryingPoisonValues = [true, false]
+    // 御医是否带药进宫，true：带药进宫，false：带水进宫
+    let dCarryingPoisonValues = [true, false]
+    
+    var drugPropertie: (Int, Int) = (0, 1)
+    var mMdeicineInAdvance = false
+    var dMedicineInAdvance = false
+    var mCarryingPoison = false
+    var dCarryingPoison = false
+    var loopCont = 0
+    
+    
+    func look() {
+        loopCont = 0
+        for (a, b) in drugProperties {
+            drugPropertie = (a, b)
+            for isDrink in mMedicineInAdvanceValues {
+                宰相进宫前喝药情况(drink: isDrink)
+            }
+        }
+    }
+    
+    private func 宰相进宫前喝药情况(drink: Bool) {
+        mMdeicineInAdvance = drink
+        for isDrink in dMedicineInAdvanceValues {
+            御医进宫前喝药情况(drink: isDrink)
+        }
+    }
+    
+    private func 御医进宫前喝药情况(drink: Bool) {
+        dMedicineInAdvance = drink
+        for isPoison in mCarryingPoisonValues {
+            宰相带进宫的药品(isPoison: isPoison)
+        }
+    }
+    
+    private func 宰相带进宫的药品(isPoison: Bool) {
+        mCarryingPoison = isPoison
+        for isPoison in dCarryingPoisonValues {
+            御医带进宫的药品(isPoison: isPoison)
+        }
+    }
+    
+    private func 御医带进宫的药品(isPoison: Bool) {
+        dCarryingPoison = isPoison
+        比试结果()
+    }
+    
+    private func 比试结果() {
+        loopCont += 1
+        print("🐤🐤🐤 情况\(loopCont)")
+        
+        let a = drugPropertie.0
+        let b = drugPropertie.1
+        if a < b {
+            print("宰相毒药药性 < 御医毒药药性")
+        } else if a == b {
+            print("宰相毒药药性 = 御医毒药药性")
+        } else {
+            print("宰相毒药药性 > 御医毒药药性")
+        }
+        
+        if mMdeicineInAdvance {
+            print("宰相进宫前喝了药")
+        } else {
+            print("宰相进宫前没喝药")
+        }
+        
+        if dMedicineInAdvance {
+            print("御医进宫前喝了药")
+        } else {
+            print("御医进宫前没喝药")
+        }
+        
+        if mCarryingPoison {
+            print("宰相带进宫的是毒药")
+        } else {
+            print("宰相带进宫的是水")
+        }
+        
+        if dCarryingPoison {
+            print("御医带进宫的是毒药")
+        } else {
+            print("御医带进宫的是水")
+        }
+        
+        宰相结果()
+        御医结果()
+    }
+    
+    private func 宰相结果() -> Bool {
+        // 宰相
+        var mDrink: (Int, Int, Int) = (0, 0, 0)
+        
+        var advanceStr = ""
+        var firstDrinkStr = ""
+        var secondDrinkStr = ""
+        
+        if mMdeicineInAdvance {
+            advanceStr = "喝了毒药"
+            mDrink.0 = drugPropertie.0
+        } else {
+            advanceStr = "什么都没喝"
+            mDrink.0 = LookingForPoison.waterP
+        }
+        
+        if dCarryingPoison {
+            firstDrinkStr = "御医的毒药"
+            mDrink.1 = drugPropertie.1
+        } else {
+            firstDrinkStr = "水"
+            mDrink.1 = LookingForPoison.waterP
+        }
+        
+        if mCarryingPoison {
+            secondDrinkStr = "自己的毒药"
+            mDrink.2 = drugPropertie.0
+        } else {
+            secondDrinkStr = "水"
+            mDrink.2 = LookingForPoison.waterP
+        }
+        
+        print("宰相进宫前：\(advanceStr)，第一次喝了：\(firstDrinkStr)，第二次喝了：\(secondDrinkStr)")
+        
+        var drinkPoisons: [Int] = []
+        if mDrink.0 > LookingForPoison.waterP {
+            drinkPoisons.append(mDrink.0)
+        }
+        if mDrink.1 > LookingForPoison.waterP {
+            drinkPoisons.append(mDrink.1)
+        }
+        if mDrink.2 > LookingForPoison.waterP {
+            drinkPoisons.append(mDrink.2)
+        }
+        
+        var mDeath = false;
+        if drinkPoisons.count == 1 {
+            mDeath = true;
+        } else if drinkPoisons.count == 2 {
+            if drinkPoisons[1] > drinkPoisons[0] {
+                mDeath = false
+            } else {
+                mDeath = true
+            }
+        } else if drinkPoisons.count == 3 {
+            if drinkPoisons[1] > drinkPoisons[0] {
+                // 已经解了毒，然后又喝了毒药
+                mDeath = true
+            } else if drinkPoisons[1] < drinkPoisons[0] {
+                if drinkPoisons[2] <= drinkPoisons[0] {
+                    mDeath = true;
+                } else {
+                    mDeath = false;
+                }
+            } else if drinkPoisons[1] == drinkPoisons[0] {
+                if drinkPoisons[2] > drinkPoisons[1] {
+                    mDeath = false
+                } else {
+                    mDeath = true
+                }
+            }
+        }
+        print(mDeath ? "宰相死了" : "宰相活了")
+        return mDeath
+    }
+    
+    private func 御医结果() -> Bool {
+        // 御医
+        var dDrink: (Int, Int, Int) = (0, 0, 0)
+        
+        var advanceStr = ""
+        var firstDrinkStr = ""
+        var secondDrinkStr = ""
+        
+        if dMedicineInAdvance {
+            advanceStr = "喝了毒药"
+            dDrink.0 = drugPropertie.1
+        } else {
+            advanceStr = "什么都没喝"
+            dDrink.0 = LookingForPoison.waterP
+        }
+        
+        if mCarryingPoison {
+            firstDrinkStr = "宰相的毒药"
+            dDrink.1 = drugPropertie.0
+        } else {
+            firstDrinkStr = "水"
+            dDrink.1 = LookingForPoison.waterP
+        }
+        
+        if dCarryingPoison {
+            secondDrinkStr = "自己的毒药"
+            dDrink.2 = drugPropertie.1
+        } else {
+            secondDrinkStr = "水"
+            dDrink.2 = LookingForPoison.waterP
+        }
+        
+        print("御医进宫前：\(advanceStr)，第一次喝了：\(firstDrinkStr)，第二次喝了：\(secondDrinkStr)")
+        
+        var drinkPoisons: [Int] = []
+        if dDrink.0 > LookingForPoison.waterP {
+            drinkPoisons.append(dDrink.0)
+        }
+        if dDrink.1 > LookingForPoison.waterP {
+            drinkPoisons.append(dDrink.1)
+        }
+        if dDrink.2 > LookingForPoison.waterP {
+            drinkPoisons.append(dDrink.2)
+        }
+        
+        var dDeath = false;
+        if drinkPoisons.count == 1 {
+            dDeath = true;
+        } else if drinkPoisons.count == 2 {
+            if drinkPoisons[1] > drinkPoisons[0] {
+                dDeath = false
+            } else {
+                dDeath = true
+            }
+        } else if drinkPoisons.count == 3 {
+            if drinkPoisons[1] > drinkPoisons[0] {
+                // 已经解了毒，然后又喝了毒药
+                dDeath = true
+            } else if drinkPoisons[1] < drinkPoisons[0] {
+                if drinkPoisons[2] <= drinkPoisons[0] {
+                    dDeath = true;
+                } else {
+                    dDeath = false;
+                }
+            } else if drinkPoisons[1] == drinkPoisons[0] {
+                if drinkPoisons[2] > drinkPoisons[1] {
+                    dDeath = false
+                } else {
+                    dDeath = true
+                }
+            }
+        }
+        print(dDeath ? "御医死了" : "御医活了")
+        return dDeath
+    }
+}
+
+let test = LookingForPoison()
+test.look()
+
+
 func myPrint(_ info: String) {
     print("🐤🐤🐤------------------------------", info)
 }
